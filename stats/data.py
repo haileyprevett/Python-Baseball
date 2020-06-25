@@ -12,5 +12,5 @@ for game_file in game_files:
     'multi4', 'multi5', 'multi6', 'event'])
     game_frames.append(game_frame)
 
-games = pd.concat(game_frame)
-games.loc['??', [multi5]] = ''
+# games = pd.concat(game_frame)
+# games.loc['??', [multi5]] = ''
