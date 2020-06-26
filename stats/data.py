@@ -29,3 +29,6 @@ identifiers = identifiers.fillna(method='ffill')
 
 # Rename columns
 identifiers.columns = ['game_id', 'year']
+
+# Concat identifier columns
+games = pd.concat([games, identifiers], axis=1, sort=False)
