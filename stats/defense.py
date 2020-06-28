@@ -30,4 +30,6 @@ defense = pd.merge(events_plus_pa,info)
 
 # Calculate the DER
 defense.loc[:, 'DER'] = 1 - ((defense['H'] + defense['ROE']) / (defense['PA'] - defense['BB'] - defense['SO'] - defense['HBP'] - defense['HR']))
-# HBP = Hit by pitch OR Hailey Brooke Prevett :)
+#       HBP = Hit-by-pitch OR Hailey Brooke Prevett :)
+# Convert year col to numeric
+defense.loc[:,'year'] = pd.to_numeric(defense.loc[:,'year'])
