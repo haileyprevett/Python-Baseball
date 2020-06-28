@@ -1,9 +1,8 @@
 # Import Stuff, steps 1-3
 import pandas as pd
 import matplotlib.pyplot as plt
-# import games from data.py
+from data import games
 
 # Select appropriate columns from games DataFrame
-# = [[ games.loc[games['type'] == 'info',
-#                games['multi2'] == 'attendance' ],
-#              [ 'year', 'multi3' ] ]
+attendance = games.loc[(games['type'] == 'info') & (games['multi2'] == 'attendance'),
+                      ['year', 'multi3']]
