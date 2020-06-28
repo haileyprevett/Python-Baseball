@@ -31,10 +31,10 @@ identifiers = identifiers.fillna(method='ffill')
 identifiers.columns = ['game_id', 'year']
 
 # Concat identifier columns
-games = pd.concat([games, identifiers], axis=1, sort=False)
+games = pd.concat([games, identifiers], sort=False, axis=1)
 
 # Fill NaN values
-games = games.fillna('')
+games = games.fillna(' ')
 
 # Categorical event type
-games.loc[:,['type']].pd.Categorical()
+games.loc(:,['type']) = pd.Categorical(games.loc(:,['type']))
