@@ -35,7 +35,7 @@ defense.loc[:, 'DER'] = 1 - ((defense['H'] + defense['ROE']) / (defense['PA'] - 
 defense.loc[:,'year'] = pd.to_numeric(defense.loc[:,'year'])
 
 # reshape with pivot
-der = defense.loc[defense['year']>=, ['year','defense','DER']]
+der = defense.loc[defense['year']>=1978, ['year','defense','DER']]
 der = der.pivot(index='year',columns='defense', values='DER')
 
 # Plot
