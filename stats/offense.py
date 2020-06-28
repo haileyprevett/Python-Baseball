@@ -8,6 +8,6 @@ plays.columns = ['type', 'inning', 'team', 'player', 'count', 'pitches', 'event'
 
 # Select the rows where the event column's value starts with S (not SB), D, T, and HR
 # Keep only inning and event cols and assign to new var hits
-hits = plays[plays['event'].str.contains('^(?:S(?!B)|D|T|HR)'),['inning', 'event']]
+# hits = plays[plays['event'].str.contains('^(?:S(?!B)|D|T|HR)'),['inning', 'event']]
 
-hits = hits.loc[:,['inning']].apply(pd.to_numeric)
+# hits = hits.loc[:,['inning']].apply(pd.to_numeric)
