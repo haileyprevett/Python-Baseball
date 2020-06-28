@@ -14,7 +14,7 @@ attendance.columns = ['year','attendance']
 attendance.loc[:,'attendance'] = pd.to_numeric(attendance.loc[:,'attendance'])
 
 # Plot year v. attendance with a horizontal line to represent the mean
-plt.plot(x='year', y='attendance', figsize=(15, 7), kind='bar')
+attendance.plot(x='year', y='attendance', figsize=(15, 7), kind='bar')
 plt.xlabel('Year')
 plt.ylabel('Attendance')
 plt.axhline(y=attendance['attendance'].mean(), label='Mean', linestyle='--', color='green')
