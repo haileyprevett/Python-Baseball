@@ -32,3 +32,13 @@ hits = hits.groupby(['inning','hit_type']).size().reset_index(name='count')
 
 # Convert hit type col to categorical
 hits['hit_type'] = pd.Categorical(hits['hit_type'],['single', 'double', 'triple', 'hr'])
+
+# Sort by inning and hit type
+hits = hits.sort_values(['inning','hit_type'])
+
+# Reshape for plotting
+hits = hits.pivot(index='inning', columns='hit_type', values='count')
+
+# plot
+hits.plot.bar(stacked=True)
+plt.show()
