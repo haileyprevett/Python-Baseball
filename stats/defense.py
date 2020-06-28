@@ -22,3 +22,12 @@ events = events.unstack().fillna(0).reset_index()
 events.columns = events.columns.droplevel()
 events.columns = ['year', 'game_id', 'team', 'BB', 'E', 'H', 'HBP', 'HR', 'ROE', 'SO']
 events = events.rename_axis(None, axis='columns')
+
+# Merge pa and events DataFrames
+events_plus_pa = pd.merge(events,pa,how='outer',left_on=['year','game_id','team'],right_on=['year','game_id','team'])
+# Merge again with info
+defense = pd.merge(events_plus_pa,info)
+
+# Calculate the DER
+defense.loc[:, 'DER'] = 1 - ((defense['H'] + defense['ROE']) / (defense['PA'] - defense['BB'] - defense['SO'] - defense['HBP'] - defense['HR']))
+# HBP = Hit by pitch OR Hailey Brooke Prevett :)
