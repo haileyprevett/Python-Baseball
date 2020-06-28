@@ -1,7 +1,7 @@
 # Import Stuff, steps 1-3
 import pandas as pd
 import matplotlib.pyplot as plt
-import games from data.py
+# import games from data.py
 
 # Select appropriate columns from games DataFrame
 # = [[ games.loc[games['type'] == 'info',
