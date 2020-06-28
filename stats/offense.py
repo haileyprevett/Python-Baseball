@@ -15,9 +15,9 @@ hits.loc[:,'inning'] = pd.to_numeric(hits.loc[:,'inning'])
 
 # Create a dictionary
 replacements = {
-    r'^S(.*)': 'single'
-    r'^D(.*)': 'double'
-    r'^T(.*)': 'triple'
+    r'^S(.*)': 'single',
+    r'^D(.*)': 'double',
+    r'^T(.*)': 'triple',
     r'^HR(.*)': 'hr'
 }
 
