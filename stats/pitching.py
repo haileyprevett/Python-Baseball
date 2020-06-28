@@ -16,5 +16,6 @@ strike_outs = strike_outs.reset_index(name='strike_outs')
 # Convert number of strike outs to numeric
 strike_outs = strike_outs.loc[:,['year', 'strike_outs']].apply(pd.to_numeric)
 
-strike_outs.plot(x='year', y='strike_outs', kind='scatter').legend(['Strike outs'])
+# Create plot
+strike_outs.plot(y='strike_outs', x='year', kind='scatter').legend(['Strike outs'])
 plt.show()
