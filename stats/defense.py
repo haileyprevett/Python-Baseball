@@ -33,3 +33,11 @@ defense.loc[:, 'DER'] = 1 - ((defense['H'] + defense['ROE']) / (defense['PA'] - 
 #       HBP = Hit-by-pitch OR Hailey Brooke Prevett :)
 # Convert year col to numeric
 defense.loc[:,'year'] = pd.to_numeric(defense.loc[:,'year'])
+
+# reshape with pivot
+der = defense.loc[defense['year']>=1978]
+der = der.pivot(index='year',columns='defense', values='DER')
+
+# Plot
+der.plot(x_compat=True,xticks=range(1978,2018,4), rot=45)
+plt.show()
